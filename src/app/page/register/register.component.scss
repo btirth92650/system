@@ -1,0 +1,31 @@
+.page {
+    width: 60%;
+    height: auto;
+    background-color: white;
+    position: relative;
+    top: 80px;
+    margin-bottom: 165px;
+    left: 20%;
+    // border: 1px solid black;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px 5px white;
+    display: flex;
+    justify-content: center;
+}
+.form{
+    width: 65%;
+}
+
+// Otp modal css
+
+.danger{
+    color: red;
+}
+
+.full-width{
+    width:100% ;
+}
+
+.mr10{
+    margin-right: 10px;
+}

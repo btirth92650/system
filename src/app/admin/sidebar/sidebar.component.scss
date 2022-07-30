@@ -1,0 +1,29 @@
+.sidebar{
+    left: 0rem;
+    width: 300px;
+    height: calc(100vh - 4rem);
+    background-color: #3d535e;
+    border-top: 1px solid white;
+    position: fixed;
+    z-index: 100;
+    // margin-left: -15px;
+    // height: 640px;
+    // width: 22%;
+    // top: 10%;
+    // position:absolute;
+}   
+.mat-list-item{
+    color:rgba(255, 255, 255, 0.500);
+}
+.student:hover{
+background: rgba(107, 100, 100,0.8);
+border-radius: 10px;    
+}
+.active{
+    color:#ffffff;
+    
+
+}
+
+
+

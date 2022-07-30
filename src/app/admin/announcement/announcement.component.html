@@ -1,0 +1,18 @@
+<div class="heading">
+    <h1> PERFECT WEBSITE MAKER </h1>
+    <p>People love Mobirise and here are some reasons why:</p>
+</div>
+
+
+<div class="row {{item.class}}"  *ngFor="let item of annoncementData">
+    <div class="col-6 mt-5 image" >
+        <img  src="{{item.image}}" alt="">
+    </div>
+    <div class="col-6 mt-5 name">
+        <h1>{{item.name}}</h1>
+        <p>{{item.description}}</p>
+        <button [ngStyle]="{'display':item.button === 'show' ? 'block': 'none'}"
+         class="{{item.buttonClass}} button">{{item.buttonName}}</button>
+    </div>  
+</div>
+

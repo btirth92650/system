@@ -1,0 +1,249 @@
+@import "/src/app/component/mixin";
+
+.navbar-brand{
+    color: white;
+    margin-top: 5px
+}
+
+.heading{
+    background-color:#3d535e;
+    padding: 15px;
+    position: sticky;
+    top: 0px;
+    z-index: 100;
+}
+
+.itemR{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+.itemL{
+    display: flex;
+    justify-content: end;
+}
+
+ .side-nav-button{
+    display: flex;
+    font-size: 1.5rem;
+    cursor: pointer;
+ }
+
+ .side-nav-button:hover{
+    background:rgba(255,255,255,0.2);
+    border-radius: 30%;
+ }
+
+
+ // hover
+// .dropdown {
+//     position: relative;
+//     display: inline-block;
+//   }
+  
+//   .dropdown-content {
+//     animation-name: example;
+//     animation-duration: 0.5s;
+//     animation-fill-mode: forwards;
+//     right: -12px;
+//     top: 55px;
+//     display: none;
+//     position: absolute;
+//     background-color: #f9f9f9;
+//     // min-width: 160px;
+//     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+//     // padding: 12px 16px;
+//     z-index: 1;
+//     max-height: 575px;
+//     height: 575px;
+//     overflow: auto;
+//     width: 450px;
+//     // border-radius: 20px;
+//     background-color: #bfbed9;
+//   }
+  
+//   .dropdown:hover .dropdown-content {
+// display: block;  }
+
+// .font{
+//   cursor: pointer;
+//   color: rgba(0, 0, 255, 0.648);
+//   text-decoration: none;
+// }
+// .font:hover{
+//   color: blue;
+// }
+// .icon{
+//   cursor: pointer;
+// }
+
+.button{
+  margin-left: 10px
+}
+
+@keyframes example{
+  0%{
+  max-width: 0px;
+  }
+
+  100%{
+
+     max-width: 450px;
+  }
+}
+
+.helpbtn{
+  position: relative;
+  // display: inline-block;
+}
+// .helpbtn:hover .find-que_ans{
+//   display: block
+// }
+
+.find-que_ans{
+  //  animation-name: example;
+   animation-duration: 1s;
+  height: 100vh;
+  width: 350px;
+  background-color: white;
+  border: 1px solid white;
+  position: fixed;
+    right: -15px; 
+    top: 70px;
+    // overflow: hidden;
+    transform: translateX(350px);
+    transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    
+    &.q-a-find{
+      transform:translateX(0);
+    }
+}
+
+// .ans-box{
+//   position: absolute;
+//   top: 0px;
+//   bottom: 0px;
+//   right: 0px;
+//   left: 0px;
+//   width: 100%;
+// flex-wrap: wrap;
+// padding: 20px;
+// align-items: flex-start;
+
+// }
+
+.que_ans-header{
+  display: flex;
+  justify-content: space-around;
+  background: white;
+  h2{
+    top: 8px;
+    right: 33px;
+    position: relative;
+    color:#313131;
+    font-family: sans-serif;
+    font-size: 16px;
+  }
+  i{
+    top: 13px;
+    left: 25px;
+    font-size: 20px;
+    position: relative; 
+    cursor: pointer;
+  }
+}
+
+.que_ans-search-wrapper{
+  // background: #f6f7fb !important;
+  padding: 20px;
+  text-align: center;
+}
+
+.que_ans-searchbar{
+
+  input{
+    width: 280px;
+    height: 30px;
+    border-radius: 20px;
+    padding: 20px;
+  }
+  i{
+    position: absolute;
+    margin-left: 118px;
+    top: 82px;
+    color: #e8ebf2; 
+  }
+}
+
+.que_ans-list{
+  overflow: scroll;
+   position: absolute;
+   width: 96%;
+}
+
+.que_ans-image{
+  img{
+    height: 55px;
+    border-radius: 28px;
+    position: relative;
+    left: 20px;
+  }
+}
+
+.que_ans-name{
+  @include que_ans-name;
+}
+.que_ans-name-1{
+  @include que_ans-name;
+
+}
+
+.que_ans-image-1{
+  img{
+    height: 55px;
+    border-radius: 28px;
+    position: relative;
+    left: 20px;
+  }
+}
+
+
+.que_ans-box{
+ @include comon;
+}
+.que_ans-box-1{
+  @include comon;
+}
+
+.ans-box{
+  background-color: white;
+  position: absolute;
+  top: 0px;
+  transform: translateX(350px);
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  height: 100vh;
+  
+  &.show-q-a{
+    transform:translateX(0);
+  }
+
+}
+.discription{
+  margin: 5px 10px;
+}
+.back{
+  // margin-left: 23px;
+  padding: 10px;
+  border-bottom: 2px solid;
+  border-color: #d6d4cf;
+  cursor: pointer;
+
+  span{
+    margin-left: 10px;
+  }
+}
+
+
+
+

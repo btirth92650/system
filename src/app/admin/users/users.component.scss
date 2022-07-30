@@ -1,0 +1,18 @@
+.image{
+    border-radius: 20px;
+}
+.card-body{
+    text-align: center;
+}
+.card-img-top{
+    border-radius: 100%;
+    transition: all 0.9s ease-in-out;
+
+}
+
+.h1{
+    font-size: 35px;
+}
+.card-img-top:hover{
+    transform: scale(0.9);
+}

@@ -1,0 +1,172 @@
+    <div class="">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 offset-md-3 mt-5 mb-5"> 
+                    <mat-card>
+                        <form class="mt-4" [formGroup]="signupForm" (ngSubmit)="signUp()">
+                            <!-- first name -->
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label class="form-label">First Name:</mat-label>
+                                <input type="text" matInput formControlName="firstname" placeholder="Enter first name.." >
+                                <mat-hint class="danger" *ngIf="f['firstname'].touched && f['firstname'].invalid">
+                                    *valid firstname is required...   
+                                </mat-hint>
+                            </mat-form-field>
+                            <!-- lastname -->
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label class="form-label">Last Name:</mat-label>
+                                <input type="text" matInput pattern="[A-Za-z]{1,32}" formControlName="lastname" placeholder="Enter last name.." class="" required>
+                                <mat-hint class="danger" *ngIf="f['lastname'].touched && f['lastname'].invalid">
+                                    *valid lastname is required...   
+                                </mat-hint>
+                            </mat-form-field>
+                            <!-- date of birth -->
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label >Date of Birth:</mat-label>
+                                <input type="date" matInput formControlName="dob" placeholder="Enter date of birth..."  required>
+                                <mat-hint class="danger" *ngIf="f['dob'].touched && f['dob'].invalid">
+                                    *valid date of birth is required...   
+                                </mat-hint>
+                            </mat-form-field> 
+                            <!-- pancard -->
+                            <mat-form-field class="full-width" appearance="outline" >
+                                <mat-label class="form-label">Pan Card:</mat-label>
+                                <input type="text" matInput formControlName="pancard" placeholder="ex. ALWPG5809L"  class=""   required>
+                                <mat-hint class="danger" *ngIf="f['pancard'].touched && f['pancard'].invalid">
+                                    *valid pancard no. is required...   
+                                </mat-hint>
+                            </mat-form-field>
+                            <!-- aadharcard -->
+                            <mat-form-field class="full-width" appearance="outline" >
+                                <mat-label class="form-label">Adhar Card:</mat-label>
+                                <input name="number" matInput type="text" formControlName="adharcard" placeholder="0000-0000-0000" maxlength="14" class="" required>
+                                <mat-hint class="danger" *ngIf="f['adharcard'].touched && f['adharcard'].invalid">
+                                    *valid adharcard no. is required...  
+                                </mat-hint>
+                            </mat-form-field>
+                            <!-- address -->
+                            <mat-form-field class="full-width" appearance="outline" >
+                                <mat-label class="form-label">Address:</mat-label>
+                                <input type="text" matInput formControlName="address" placeholder="Enter address..." class="" required>
+                                <mat-hint class="danger" *ngIf="f['address'].touched && f['address'].invalid">
+                                    *address is required...   
+                                </mat-hint>
+                            </mat-form-field>
+                            <!-- city -->
+                            <mat-form-field class="full-width" appearance="outline" >
+                                <mat-label class="form-label">City:</mat-label>
+                                <input type="text" matInput formControlName="city" placeholder="Enter city..." class="" required>
+                                <mat-hint class="danger" *ngIf="f['city'].touched && f['city'].invalid">
+                                    *city is required...   
+                                </mat-hint>
+                            </mat-form-field>
+                            <!-- pin code -->
+                            <mat-form-field class="full-width" appearance="outline" >
+                                <mat-label class="form-label">Pin Code:</mat-label>
+                                <input type="text" matInput pattern="" formControlName="pincode" maxlength="6" placeholder="Enter pincode no..." class="" required>
+                                <mat-hint class="danger" *ngIf="f['pincode'].touched && f['pincode'].invalid">
+                                    *validpincode is required...   
+                                </mat-hint>
+                            </mat-form-field>
+                            <!-- state -->
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label class="form-label">State:</mat-label>
+                                <input type="text" matInput formControlName="state" placeholder="Enter state..." class="" required>
+                                <mat-hint class="danger" *ngIf="f['state'].touched && f['state'].invalid">
+                                    *state is required...   
+                                </mat-hint>
+                            </mat-form-field>   
+                            <!-- country -->
+                            <mat-form-field class="full-width" appearance="outline" >
+                                <mat-label class="form-label">Country:</mat-label>
+                                <input type="text" matInput formControlName="country" placeholder="Enter country..." class="" required>
+                                <mat-hint class="danger" *ngIf="f['country'].touched && f['country'].invalid">
+                                    *country is required...   
+                                </mat-hint>
+                            </mat-form-field>
+                            <!-- email -->
+                            <mat-form-field class="full-width" appearance="outline" >
+                                <mat-label class="form-label">Email address:</mat-label>
+                                <input type="email" matInput formControlName="email"  placeholder="your@email.com"
+                                class="" required>
+                                <mat-hint class="danger" *ngIf="f['email'].touched && f['email'].invalid">
+                                    *valid email is required...   
+                                </mat-hint>
+                            </mat-form-field>
+                            <!-- password -->
+                            <mat-form-field class="full-width" appearance="outline" >
+                                <mat-label class="form-label">Password:</mat-label>
+                                <input type="password" matInput formControlName="password" maxlength="6" [type]="showPassword ? 'text' : 'password'" placeholder="Enter password..." class=""   required>
+                                <mat-icon class="mr10"  matSuffix (click)="onClick()">   
+                                    {{showPassword?'visibility_off':'visibility'}}
+                                    </mat-icon>
+                                <mat-hint class="danger" *ngIf="f['password'].touched && f['password'].invalid">
+                                    *password must be required   
+                                </mat-hint>        
+                                <!-- pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" -->
+                            </mat-form-field>
+                            <!-- conform password -->
+                            <mat-form-field class="full-width" appearance="outline" >
+                                    <mat-label class="form-label">Conform Password:</mat-label>
+                                    <input type="password" matInput formControlName="conformpassword" maxlength="6" placeholder="Enter conformpassword..." class="" required>
+                                    <mat-hint class="danger" *ngIf="f['conformpassword'].touched && f['conformpassword'].invalid">
+                                        *Password can not be match   
+                                    </mat-hint>
+                            </mat-form-field>
+                            <!-- mobile no - -->
+                            <mat-form-field class="full-width" appearance="outline" >
+                                <mat-label class="form-label">Mobile No:</mat-label>
+                                <input type="tel" matInput formControlName="mobileno" placeholder="Enter mobile no..." maxlength="10"
+                                class=""  required>
+                                <mat-hint class="danger" *ngIf="f['mobileno'].touched && f['mobileno'].invalid">
+                                    *mobile no. is required...   
+                                </mat-hint>
+                            </mat-form-field>
+                            <!-- button otp send and reset -->
+                            <div class="text-center ">
+                                <button [disabled]="!signupForm.valid" type="submit" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    OTP Send
+                                </button>
+                                <button class="btn btn-primary m-4" type="reset">reset</button>
+                            </div>
+                        </form>
+                    </mat-card>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="exampleModalLabel">Enter your otp</h3>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form [formGroup]="otpForm" (ngSubmit)="valid()">
+                        <div class="modal-body">
+                            <div class="container height-100 d-flex justify-content-center">
+                                <div class="position-relative">
+                                    <div class="text-center">
+                                        <h3>Please enter the one time password <br> to verify your account</h3>
+                                        <!-- <div> <mat-hint>A code has been sent to</mat-hint> <small>*******9897</small> </div> -->
+                                        <div class="d-flex  justify-content-center mt-2">
+                                            <ngx-otp-input [config]="otpInputConfig" (fill)="handleFillEvent($event)">
+                                                <!-- (otpChange)="handeOtpChange($event)" -->
+                                            </ngx-otp-input>
+                                        </div>
+                                        <div class="mt-4">
+                                            <button  class="btn btn-danger" type="submit"
+                                                data-bs-dismiss="modal">Validate</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>

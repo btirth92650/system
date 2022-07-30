@@ -1,0 +1,49 @@
+.page {
+    width: 60%;
+    height: 500px;
+    background-color: white;
+    position: relative;
+    top: 80px;
+    left: 20%;
+    // border: 1px solid black;
+    border-radius: 20px;
+    // box-shadow: 5px 5px 5px 5px white;
+    display: flex;
+    justify-content: center;
+}
+
+.full-width{
+    width: 100%;
+}
+
+
+.form {
+    padding-right: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.form-group {
+    margin-left: 50px;
+    width: 100%
+}
+
+.signbtn{
+    margin-left: 50px;
+}
+
+.signup {
+    font-weight: 700;
+    font-family: -webkit-body;
+    
+}
+
+.image{
+    height: 450px;
+}
+
+.mat-card{
+    background: #f8f2f252;     
+}
+
+// #fef2f25e

@@ -1,0 +1,22 @@
+@mixin comon {
+    display: flex;
+    margin-top: 20px
+}
+
+@mixin que_ans-name {
+    left: 45px;
+  position: relative;
+ h3{
+    top: 8px;
+  position: relative;
+  color: #2a3142;
+  letter-spacing: 1px;
+  font-weight: 600;
+ }
+  p{
+    top: 35px;
+    position: absolute;
+  }
+
+}
+

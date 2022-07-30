@@ -1,0 +1,16 @@
+.card{
+    margin: 20px;
+}
+.matcard{
+    height: 100%;
+   
+}
+
+.card-img-top{
+    transition: all 0.8s ease-in-out;
+
+    &:hover{
+        transform: scale(1.1) ;
+
+    }
+}

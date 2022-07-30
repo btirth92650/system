@@ -1,0 +1,76 @@
+
+
+  <!-- <div class="container mt-5">
+    <div> 
+<input type="text" min="0"  [(ngModel)]="value">
+    </div> 
+    <div class="mt-5">
+      <button (click)="increse()">increse</button>
+      <button (click)="decrese()">decrese</button>
+    </div>
+  </div> -->
+  
+
+  <section class="container form title">
+    <h1 class="text-center "> Registration Form </h1>
+    <form style="margin-top:20px" [formGroup]="table" (ngSubmit)="submit()"> 
+        <div class="row">
+            <div class="col-md-6">
+                <label class="form-label"> First Name:</label>
+                <input type="text" class="form-control" placeholder="Enter firstname..." formControlName="fName" required >
+               
+            </div>
+            <div class="col-md-6">
+                <label class="form-label"> Last Name:</label>
+                <input type="text" class="form-control" placeholder="Enter lastame..." formControlName="lName" required >
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-md-6">
+                <label class="form-label"> E-mail:</label>
+                <input type="email" formControlName="email" class="form-control"
+                    placeholder="your@email.com"  required >
+                
+            </div>
+            <div class="col-md-6 ">
+                <label class="form-label"> password:</label>
+                <input type="password" formControlName="password" class="form-control"
+                    placeholder="Enter password..."  required >  
+            </div>
+        </div>
+
+        <div class="row ">
+            <div class="col-md-3">
+                <label class="form-label"> Age:</label>
+                <input type="number" formControlName="age" maxlength="2" class="form-control" 
+                    placeholder="Enter age..." required >
+            </div>
+            <div class="col-md-6">
+                <label class="form-label"> Address:</label>
+                <input type="text" formControlName="address" class="form-control"
+                    placeholder="Enter address..." required >
+            </div>
+            <div class="col-md-3">
+                <label class="form-label"> Phone no:</label>
+                <input type="number" formControlName="phone" class="form-control"
+                    placeholder="Enter number..."  required >
+            </div>
+        </div>
+<br>
+
+        <div class="text-center">
+            <!-- <button style="margin-right: 20px;"  type="button" (click)="editSubmit()" class="btn btn-secondary">Edit-Submit</button> -->
+
+            <button   type="submit" class="btn btn-success">Submit</button>
+            <button style="margin-left: 20px;" type="reset" class="btn btn-primary"> reset</button>
+        </div>    
+    </form>
+</section>
+
+
+<br>
+<br>
+
+<app-report-child [inputData]="data" (editRequest)="editData($event)"> </app-report-child> 
+
+

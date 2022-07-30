@@ -1,0 +1,48 @@
+<div class="container">
+    <h1 class="h1">iPhone, Smartphones, Tablets, Laptops & More</h1>
+    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Amet mauris commodo quis imperdiet massa tincidunt. Nisl rhoncus mattis rhoncus urna neque viverra
+        justo. Leo in vitae turpis massa sed elementum.</h3>
+</div>
+
+<div class="container">
+    <div class="row mt-5" >
+        <div class="col-6 box" *ngFor="let item of maintenenceData">
+            <mat-card class="card" [ngStyle]="{'background-color':item.color}">
+                <div class="container">
+                    <div class="icon">
+                        <i class="{{item.icon}}" aria-hidden="true"></i>
+                    </div>
+                    <h1 class="mt-2"><b>{{item.name}}</b></h1>
+                    <p>{{item.description}}</p>
+                    <div class="mt-4">
+                        <button class="btn btn-outline-secondary">{{item.buttonName}}</button>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content mt-5">
+        <div class="row mt-4 mb-4">
+            <div class="col-6">
+                <div class="container">
+                    <img class="image"
+                        src="https://mobirise.com/extensions/claimm4/device-repair-service/assets/images/008.jpg"
+                        alt="">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="container">
+                    <h1> Easy and Simple</h1>
+                    <p>If you have any electronic devices in need of repair, our Electronic Repairs can provide an
+                        affordable solution. With fifteen years' experience repairing gadgets, we are confident that we
+                        can fix your devices. </p>
+                    <button class="btn btn-secondary"> Learn more</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

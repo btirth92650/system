@@ -1,0 +1,35 @@
+<h2>child component</h2>
+
+<div class="form-group col-md-4">
+    <input class="form-control rounded-0 py-2" type="search" [(ngModel)]="searchValue" placeholder="Search value here">
+    <i class="fa fa-search" aria-hidden="true"></i>
+  </div>
+<table style="width:100%; border: 1px solid black;" class="mt-4">
+    <tr>
+      <th>Sr.no</th>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Email</th>
+      <th>password</th>
+      <th>age</th>
+      <th>address</th>
+      <th>phone</th>
+      <th>.........Action.........</th>
+
+    </tr>
+    <tr *ngFor="let item of inputData | search:searchValue , let i=index ">
+      <td>{{i+1}}</td>  
+      <td>{{item.fName}}</td>
+      <td>{{item.lName}}</td>
+      <td>{{item.email}}</td>
+      <td>{{item.password}}</td>
+      <td>{{item.age}}</td>
+      <td>{{item.address}}</td>
+      <td>{{item.phone}}</td>
+      <td><button (click)="passData(item)"  style="margin-right:10px ;" class="btn btn-primary" >edit</button> 
+        <button (click)="deletData(item)" class="btn btn-danger" >Delete</button></td>
+      <td></td>
+
+    </tr>
+    
+  </table>

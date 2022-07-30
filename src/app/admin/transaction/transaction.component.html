@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-4 mt-4" style="width: 21rem;" [ngStyle]="{'display':item.content === 'show' ? 'block': 'none'}"
+        *ngFor="let item of transactionData,let i=index">
+        <mat-card class="matcard" [ngStyle]="{'background-color':item.color}">
+            <img src="{{item.image}}" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+                <h1>{{item.name}}</h1>
+                <p>{{item.description}}</p>
+                <a href="#" class="btn btn-outline-primary ">{{item.button}}</a>
+            </div>
+        </mat-card>
+    </div>
+</div>

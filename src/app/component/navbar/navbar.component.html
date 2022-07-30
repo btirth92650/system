@@ -1,0 +1,95 @@
+<div class="container-fluid heading">
+  <div class="row">
+    <div class="col-6 itemR">
+      <div class="side-nav-button p-2 me-3 text-light">
+        <i class="fa fa-bars"></i>
+      </div>
+      <a class="navbar-brand" href="#">management-system</a>
+
+    </div>
+    <div class="col-6 itemL">
+      <div class="dropstart">
+        <button class="btn btn-outline-light dropdown-toggle" data-bs-toggle="dropdown">action </button>
+        <ul class="dropdown-menu dropdown-menu-dark">
+          <li><a href="/signup" class="dropdown-item">Signup</a></li>
+          <li><a href="/login" class="dropdown-item">Logout</a></li>
+        </ul>
+      </div>
+
+       <div class="helpbtn" clickOutside (clickOutside)="clickedOutside()"> <!--  -->
+        <button class="btn btn-secondary button" (click)="fullBox()">Help</button>
+        <div class="find-que_ans" [ngClass]="{'q-a-find':show === true}">
+          <div class="que_ans-header">
+            <h2 class="">FRIEND LIST</h2>
+            <i class="fa fa-times fa-2x " (click)="fullBox()" aria-hidden="true"></i>
+          </div>
+          <div class="que_ans-search-wrapper">
+            <div class="que_ans-searchbar">
+              <input (change)="search($event)" type="text" [(ngModel)]="searchText"  placeholder="search">
+              <i class="fa fa-search" aria-hidden="true"></i>
+            </div>
+          </div> 
+          <div class="que_ans-list" (click)="popup()">
+            <div class="que_ans-box" *ngFor="let item of helpData | filter:searchText" >
+              <div class="que_ans-image">
+                <img  src="{{item.image}}"
+                  alt="">
+              </div>
+              <div class="que_ans-name">
+                <h3>{{item.name}} </h3>
+                <p> {{item.status}} </p>
+              </div>
+            </div>
+            <div class="ans-box" [ngClass]="{'show-q-a':visible === true}">
+              <div class="back" >
+                <span><i  class="fa fa-angle-double-left fa-lg" aria-hidden="true"> </i> &nbsp; back</span>
+              </div>
+              <div class="que_ans-list-1" *ngFor="let item of helpDataList" (click)="popup()" >
+                <div class="que_ans-box-1" >
+                  <div class="que_ans-image-1">
+                    <img 
+                      src="{{item.image}}" alt="">
+                  </div>
+                  <div class="que_ans-name-1">
+                    <h3>{{item.name}}</h3>
+                    <p> {{item.status}} </p> 
+                  </div>
+                </div>
+                <div class="discription">
+                  <p>{{item.description}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="dropdown">
+        <button class="btn btn-secondary button ">Help</button>
+        <div class="dropdown-content">
+          <div class="container">
+            <div class="d-flex mt-3">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </div>
+           <div class="text-center mt-2">
+              <i (click)="onClick()" class="fa fa-question-circle fa-3x icon" aria-hidden="true"></i>
+             <h2 class="">helps</h2>
+            </div>
+            <div class="text-center">
+              <button class="" (click)="onClick()" mat-button color="primary">Answer</button>
+            </div>
+            <div class="row mt-3" *ngFor="let item of questionData, let i=index">
+              <div class="">
+                <a class="font" (click)="showAnswer(i,item)"><span>{{i+1}}.</span>{{item.question}}</a>
+                  <p *ngIf="item.check">{{item.answer}}</p>
+                <div class="" *ngIf="isShow">
+                  <p>{{item.answer}}</p>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </div>
