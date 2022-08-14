@@ -1,6 +1,7 @@
 @mixin comon {
     display: flex;
-    margin-top: 20px
+    padding:  8px 0px;
+    border-bottom: 4px solid #EAEAEA;
 }
 
 @mixin que_ans-name {

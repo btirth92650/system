@@ -33,6 +33,7 @@ export class ReportComponent implements OnInit {
     return el.phone === this.table.value.phone})
     if(abc === undefined){
       this.data.push(this.table.value)
+      console.log(this.data)
       this.table.reset();
     }else{
       alert("this number is allready exists")
