@@ -23,6 +23,8 @@ import { SignupChildComponent } from './signup-child/signup-child.component';
 import { FilterPipe } from '../pipe/filter.pipe';
 import { ReportChildComponent } from './report-child/report-child.component';
 import { SearchPipe } from './pipes/search.pipe';
+import {MatTableModule} from '@angular/material/table';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -55,6 +57,9 @@ import { SearchPipe } from './pipes/search.pipe';
     FormsModule,
     ReactiveFormsModule,
     FormsModule,
+    MatTableModule,
+    NgbModule
+    
   ],
 })
 export class AdminModule { }

@@ -160,15 +160,15 @@ searchText:string = ''
 
   
   search(event:any){
-  //   let arr = []
-  // console.log(event.target.value)
-  //  for(let el of this.helpData){
-  //   if(el.name === event.target.value){
-  //       arr.push(el)
-  //   }
+//      let arr = []
+//   console.log(event.target.value)
+//    for(let el of this.helpData){
+//     if(el.name === event.target.value){
+//         arr.push(el)
+//     }
     
-  //  }
-  //  console.log("arr=========?",arr);
+//    }
+//    console.log("arr=========?",arr);
 
 //   var marvelHeroes =  this.helpData.filter((item: any) => {
 

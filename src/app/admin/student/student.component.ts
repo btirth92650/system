@@ -12,6 +12,10 @@ export class StudentComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  page = 1;
+  pageSize =10;
+
+
   formData=[
     {
       firstName:'bhalani',

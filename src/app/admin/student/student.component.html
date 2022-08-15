@@ -8,7 +8,7 @@
             <th>Contact</th>
             <th>Compnay</th>
         </tr>
-        <tr *ngFor="let item of formData, let i=index" >
+        <tr *ngFor="let item of formData | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize, let i=index" >
             <td>{{i+1}}</td>
             <td>{{item.firstName}}</td>
             <td>{{item.lastName}}</td>
@@ -17,4 +17,6 @@
             <td>{{item.company}}</td>
         </tr>
     </table>
+    <!-- <ngb-pagination [collectionSize]="formData.length" [(page)]="page" [maxSize]="5" [rotate]="true" [ellipses]="false" [boundaryLinks]="true"></ngb-pagination> -->
+
 </mat-card>
