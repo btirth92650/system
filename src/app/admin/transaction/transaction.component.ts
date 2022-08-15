@@ -27,7 +27,7 @@ export class TransactionComponent implements OnInit {
       description:'Mobirise offers a wide range of pre-made website themes and templates related to many fields of life and business. Each theme has a rich set of blocks that are responsive and easy to manage.',
       button:'VIEW TEMPLATE',
       color:'green',
-      content:'',
+      content:'aaa',
     },
     {
       image:'https://mobiri.se/assets/images/extensions.jpg',
@@ -43,7 +43,7 @@ export class TransactionComponent implements OnInit {
       description:'Mobirise is a free WYSIWYG Web Editor that allows any user with absolute no coding skills to set up a beautiful website in no longer than a few hours.',
       button:'FREE WEBSITE BUILDER',
       color:'yellow',
-      content:'',
+      content:'aaa',
     },
     {
       image:'https://mobiri.se/assets/images/themes.jpg',
@@ -59,7 +59,7 @@ export class TransactionComponent implements OnInit {
       description:'With Mobirise Extensions, you will be able to manually make your website, add social comments, integrate site analytics and much more.',
       button:'ADD EXTENTION',
       color:'purple',
-      content:'',
+      content:'aaa',
     },
 
 

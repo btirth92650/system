@@ -10,44 +10,33 @@ export class NavbarComponent implements OnInit {
 // isShow = false;
  
 searchText:string = ''
+isChatOpen = false;
+  isChatListOpen = false;
+  isChatUserList = false
+  isActiveNumber:number = 0;
+  headerList =[
+    {
+    image:'https://react.pixelstrap.com/endless/static/media/1.df2fec22b78ae473a473.jpg',
+    name:'Vincent Porter',
+    status:'online',
+   },
+  ]
+
+  storeHeaderobject(item){
+    // this.headerList.push(item)
+    this.headerList = [item]
+  }
+  
+  
+
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.headerList);
+    
   }
 
-  // onClick(){
-  //   this.isShow = !this.isShow
-  // }
-
-  // questionData=[
-  //   {
-  //     question:'what is setting ??',
-  //     answer:'Setting in the go to the our Lorem, ipsum dolor sit amet.',
-  //     id: 1,
-  //     check: false
-  //   },
-  //   {
-  //     question:'what is entitey ??',
-  //     answer:'Entitey in the go to the our Lorem, ipsum dolor sit amet.',
-  //     id: 2,
-  //     check: false
-  //   },
-  //   {
-  //     question:'what is our service ??',
-  //     answer:'Service in the go to the our Lorem, ipsum dolor sit amet.',
-  //     id: 3,
-  //     check: false
-  //   },
-    
-  // ]
-
-  // showAnswer(i: number, item: any) {
-  //   const index = i + 1
-  //   if (index === item.id) {
-  //     item.check = !item.check
-  //   }
-  // }
-
+  
   clickedOutside():void{
     this.show = false
   }
@@ -56,20 +45,12 @@ searchText:string = ''
   fullBox(){
     if(this.show){
       this.show = false;
-      // this.visible = false;
     }
     else{
        this.show = true;
-      // this.visible = false;
-
     }
 
   }
-
-  // closeFullBox(){
-  // this.show = false
-
-  // }
 
   visible = false; 
   popup(){
@@ -85,8 +66,7 @@ searchText:string = ''
    {
     image:'https://react.pixelstrap.com/endless/static/media/5.53a215ed00aac31d7543.jpg',
     name:'kori Thomas',
-    status:'Online',
-    
+    status:'online',    
    },
    {
     image:'https://react.pixelstrap.com/endless/static/media/4.af13b24b764747328fb2.jpg',
@@ -108,6 +88,21 @@ searchText:string = ''
     name:'Erica Hughes',
     status:'online',
    },
+   {
+    image:'https://react.pixelstrap.com/endless/static/media/1.df2fec22b78ae473a473.jpg',
+    name:'Vincent Porter',
+    status:'online',
+   },
+   {
+    image:'https://react.pixelstrap.com/endless/static/media/5.53a215ed00aac31d7543.jpg',
+    name:'kori Thomas',
+    status:'online',    
+   },
+   {
+    image:'https://react.pixelstrap.com/endless/static/media/4.af13b24b764747328fb2.jpg',
+    name:'Aiden Chavez',
+    status:'28 minute ago',
+   },
   ]
   
   helpDataList=[
@@ -121,7 +116,7 @@ searchText:string = ''
    {
     image:'https://react.pixelstrap.com/endless/static/media/5.53a215ed00aac31d7543.jpg',
     name:'kori Thomas',
-    status:'Online',
+    status:'online',
     description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. In, animi. Inventore quae impedit id ipsum dicta quisquam expedita asperiores placeat praesentium a corrupti fugiat reiciendis, porro culpa tempora fuga amet architecto assumenda? Quis aperiam nam cum enim iste nihil, commodi perferendis ratione dolorem. Sint praesentium ipsam hic accusantium nemo reprehenderit.',
     id:2,
    },
@@ -159,24 +154,47 @@ searchText:string = ''
   // value:any
 
   
-  search(event:any){
-//      let arr = []
-//   console.log(event.target.value)
-//    for(let el of this.helpData){
-//     if(el.name === event.target.value){
-//         arr.push(el)
-//     }
-    
-//    }
-//    console.log("arr=========?",arr);
+ 
 
-//   var marvelHeroes =  this.helpData.filter((item: any) => {
+  groupChatting = [
+    {
+      key : 1,
+      msg :'Good Morning',
+      send : "Abhishek  10:23 AM"
+    },
+    {
+      key : 2,
+      msg :'Good Morning',
+      send : "Manish 10:24 AM"
+    },
+    {
+      key : 1,
+      msg :'How Are You',
+      send : "Abhishek  10:23 AM"
+    },
+    {
+      key : 2,
+      msg :'I am Fine',
+      send : "10:23 AM"
+    },
+    {
+      key : 2,
+      msg :'Whats About You',
+      send : "Abhishek  10:23 AM"
+    },
+    {
+      key : 1,
+      msg :'what do you do',
+      send : "Abhishek  10:23 AM"
+    },
+    {
+      key : 2,
+      msg :'task complete',
+      send : "Manish 10:24 AM"
+    },
+  ]
 
-//     return item.name == event.target.value;
-//   })
-// console.log("marvelHeroes====>>",marvelHeroes);
-
-  }
+  
      
   
 }

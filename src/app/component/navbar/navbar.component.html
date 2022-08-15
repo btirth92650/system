@@ -17,15 +17,96 @@
       </div>
 
        <div class="helpbtn" clickOutside (clickOutside)="clickedOutside()"> <!--  -->
-        <button class="btn btn-secondary button" (click)="fullBox()">Help</button>
-        <div class="find-que_ans" [ngClass]="{'q-a-find':show === true}">
+        <!-- <button class="btn btn-secondary button" (click)="fullBox()">Help</button> -->
+        <button class="btn btn-secondary button" (click)="isChatOpen = !isChatOpen; isChatListOpen = !isChatListOpen;">Help</button>
+
+        <div class="chats">
+          <div id="userPanel" class="userList" [ngClass]="isChatListOpen ?  isChatUserList ? 'openChatUserList' : 'openChatList' : 'closeChat'">
+              <div class="arrow_icon" (click)="isChatUserList = !isChatUserList">
+                  <i class="fa fa-chevron-right fa-2x" aria-hidden="true" *ngIf="isChatUserList"></i>
+                  <i class="fa fa-chevron-left fa-2x" aria-hidden="true" *ngIf="!isChatUserList"></i>
+              </div>
+              <div class="userall_list">
+                  <div class="recent_chat">
+                      <span>Recent Chats</span>
+                      <div class="que_ans-search-wrapper">
+                        <div class="que_ans-searchbar">
+                          <input  type="text" [(ngModel)]="searchText"  placeholder="search">
+                          <i class="fa fa-search" aria-hidden="true"></i>
+                        </div>
+                      </div>
+                  </div>
+                   
+                  
+                  <div class="que_ans-box" (click)="isActiveNumber = i" (click)="storeHeaderobject(item)" [ngClass]="{'active': isActiveNumber === i}" *ngFor="let item of helpData | filter:searchText , let i=index" >
+                    <div class="que_ans-image">
+                      <h2 class="status_user-icon" [ngStyle]="{'display':item.status === 'online' ? 'block': 'none'}"></h2> <img  src="{{item.image}}" alt=""> 
+                    </div>
+                    <div class="que_ans-name">
+                      <h3>{{item.name}} </h3>
+                      <p> {{item.status}} </p>
+                    </div>
+                  </div>
+               </div>
+          </div>
+          
+          <div id="mySidepanel" class="sidepanel" [ngClass]=" isChatOpen ? 'openChat' : 'closeChat'">
+              <div class="user_title">
+                 <div class="d-flex" *ngFor="let item of headerList"> 
+                     <div>
+                         <h2 class="status-icon" [ngStyle]="{'display':item.status === 'online' ? 'block': 'none'}"></h2><img class="dp-image" src="{{item.image}}"/>
+                      </div>
+                      <div class="ml-1 lineHeight">
+                         <span>{{item.name}}</span><br>
+                         <label>{{item.status}}</label>
+                      </div>
+                 </div>
+                 <div>
+                   <a href="javascript:void(0)" class="closebtn" (click)="isChatOpen = false; isChatListOpen = false;isChatUserList = false;">×</a>
+                 </div>
+              </div>
+             
+              <div class="user_chatting">
+                  <span>----------- 31 Mar -----------</span>
+      
+                  <ng-container *ngFor="let item of groupChatting">
+                      <div class="left_chat d-flex" *ngIf="item.key === 1">
+                         <img src="../../../../assets/img/icons/chat_usericon.svg" />
+                         <div class="chat_msg">
+                             <span>{{item.msg}}</span>
+                             <h4>{{item.send}}</h4>
+                         </div>
+                      </div>
+                      <div class="right_chat d-flex" *ngIf="item.key === 2">
+                          <div class="chat_msg">
+                              <span>{{item.msg}}</span>
+                              <h4>{{item.send}}<img src="../../../assets/chat box icon/double right.jpg"/> </h4>
+                          </div>
+                       </div>
+                  </ng-container>
+              </div>
+      
+              <div class="send_msg">
+                  <div class="attech_file">
+                      <img src="../../../assets/chat box icon/attech-file.jpg" />
+
+                  </div>
+                  <input type="text" placeholder="Type here..."/>
+                  <div class="send_icon">
+                      <!-- <img src="../../../../assets/img/icons/send_msg.svg" /> -->
+                      <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                  </div>
+              </div>
+          </div>
+      </div>
+        <!-- <div class="find-que_ans" [ngClass]="{'q-a-find':show === true}">
           <div class="que_ans-header">
             <h2 class="">FRIEND LIST</h2>
             <i class="fa fa-times fa-2x " (click)="fullBox()" aria-hidden="true"></i>
           </div>
           <div class="que_ans-search-wrapper">
             <div class="que_ans-searchbar">
-              <input (change)="search($event)" type="text" [(ngModel)]="searchText"  placeholder="search">
+              <input  type="text" [(ngModel)]="searchText"  placeholder="search">
               <i class="fa fa-search" aria-hidden="true"></i>
             </div>
           </div> 
@@ -61,35 +142,6 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
-
-      <!-- <div class="dropdown">
-        <button class="btn btn-secondary button ">Help</button>
-        <div class="dropdown-content">
-          <div class="container">
-            <div class="d-flex mt-3">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </div>
-           <div class="text-center mt-2">
-              <i (click)="onClick()" class="fa fa-question-circle fa-3x icon" aria-hidden="true"></i>
-             <h2 class="">helps</h2>
-            </div>
-            <div class="text-center">
-              <button class="" (click)="onClick()" mat-button color="primary">Answer</button>
-            </div>
-            <div class="row mt-3" *ngFor="let item of questionData, let i=index">
-              <div class="">
-                <a class="font" (click)="showAnswer(i,item)"><span>{{i+1}}.</span>{{item.question}}</a>
-                  <p *ngIf="item.check">{{item.answer}}</p>
-                <div class="" *ngIf="isShow">
-                  <p>{{item.answer}}</p>
-                </div>
-                
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
     </div>
