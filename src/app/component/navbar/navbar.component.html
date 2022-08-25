@@ -23,8 +23,8 @@
         <div class="chats">
           <div id="userPanel" class="userList" [ngClass]="isChatListOpen ?  isChatUserList ? 'openChatUserList' : 'openChatList' : 'closeChat'">
               <div class="arrow_icon" (click)="isChatUserList = !isChatUserList">
-                  <i class="fa fa-chevron-right fa-2x" aria-hidden="true" *ngIf="isChatUserList"></i>
-                  <i class="fa fa-chevron-left fa-2x" aria-hidden="true" *ngIf="!isChatUserList"></i>
+                  <i class="fa fa-chevron-right" aria-hidden="true" *ngIf="isChatUserList"></i>
+                  <i class="fa fa-chevron-left" aria-hidden="true" *ngIf="!isChatUserList"></i>
               </div>
               <div class="userall_list">
                   <div class="recent_chat">

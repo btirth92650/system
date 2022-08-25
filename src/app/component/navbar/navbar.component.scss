@@ -168,7 +168,7 @@
   input {
     height: 35px;
     border-radius: 12px;
-    padding: 0px 40px 0px 10px;
+    padding: 0px 0px 0px 10px;
     border: none;
     outline: none;
     }
@@ -281,7 +281,7 @@
 }
 
 .openChatList {
-  width: 20.7% !important;
+  width: 20.49% !important;
 }
 
 .openChatUserList {
@@ -410,6 +410,7 @@
     background: #F7F7F7;
     outline: none;
     border: 0.74631px solid #E8E6EA;
+    max-width: 60%;
   }
 
   .attech_file {
@@ -453,13 +454,14 @@
 
 .arrow_icon {
   background-color: #5D9EB9;
-  width: 26px;
+  width: 20px;
   height: 100%;
   top: 0;
   bottom: 0;
   position: sticky;
 
   i {
+    font-size: 20px;
     position: absolute;
     top: 50%;
     left: 0;
@@ -474,7 +476,7 @@
 
   .recent_chat {
     background: #a8cbd8;
-    padding: 6px 0px 6px 20px;
+    padding: 6px 0px 6px 15px;
     position: sticky;
     top: 0;
     z-index: 2;
@@ -483,7 +485,7 @@
       font-weight: 700;
       font-size: 20px;
       color: #1B779E;
-      padding: 10px;
+      padding: 16px;
     }
   }
 

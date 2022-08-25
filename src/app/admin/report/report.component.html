@@ -74,3 +74,18 @@
 <app-report-child [inputData]="data" (editRequest)="editData($event)"> </app-report-child> 
 
 
+
+<div>
+    <table>
+        <tr>
+        <th>srNo.</th>
+        <th>name</th>
+        <th>status.</th>
+        </tr>
+        <tr *ngFor="let item of arrey, let i=index">
+            <td>{{i+1}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.status}}</td>
+        </tr>
+    </table>
+</div>

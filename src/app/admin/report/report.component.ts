@@ -10,8 +10,8 @@ export class ReportComponent implements OnInit {
   // opened: boolean = false
   constructor(private formbuilder: FormBuilder) { }
 
-  table!: FormGroup
-  data:any = []
+  table!: FormGroup;
+  data:any = [];
   ngOnInit(): void {
     this.table = this.formbuilder.group({
       fName: "",
@@ -22,6 +22,8 @@ export class ReportComponent implements OnInit {
       address: "",
       phone: ""
     })
+    console.log(this.list);
+    
   }
 
 
@@ -61,5 +63,83 @@ let abc:any = this.data.findIndex((el:any):any=>{
   // }
 
 
+  arrey=[
+    {
+      srNo:1,
+      name:'realloc',
+      status:'active'
+    },
+    {
+      srNo:2,
+      name:'realloc',
+      status:'active'
+    },
+    {
+      srNo:3,
+      name:'realloc',
+      status:'active'
+    },
+    {
+      srNo:4,
+      name:'realloc',
+      status:'active'
+    },
+    {
+      srNo:5,
+      name:'realloc',
+      status:'active'
+    },
+    {
+      srNo:6,
+      name:'realloc',
+      status:'active'
+    },
+    {
+      srNo:7,
+      name:'realloc',
+      status:'active'
+    },
+    {
+      srNo:8,
+      name:'realloc',
+      status:'active'
+    },
+    {
+      srNo:9,
+      name:'realloc',
+      status:'active'
+    },
+    {
+      srNo:10,
+      name:'realloc',
+      status:'active'
+    },
+    {
+      srNo:11,
+      name:'realloc',
+      status:'active'
+    },
+    {
+      srNo:12,
+      name:'realloc',
+      status:'active'
+    },
+    {
+      srNo:13,
+      name:'realloc',
+      status:'active'
+    },
+    {
+      srNo:14,
+      name:'realloc',
+      status:'active'
+    },
+  ]
+
+  
+    length = this.arrey.length
+
+
+  list = this.arrey.slice(this.length-5,this.length)
 
 }
